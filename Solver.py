@@ -31,7 +31,7 @@ for w in dictionary:
 dictionary = d    
 
 
-class TonguessSlover:
+class TonguessSolver:
     def __init__(self, dictionary, word_len):
         self.word_len = word_len    
         self.data = []
@@ -70,7 +70,7 @@ print("OK, Let's Start this Game :) " )
 print('Word length : ' , word_len)
 print('------------------------------------------------ ')
 
-S = TonguessSlover(dictionary, int(word_len) )
+S = TonguessSolver(dictionary, int(word_len) )
 
 count = 0
 while True:

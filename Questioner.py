@@ -25,7 +25,7 @@ class TonguessQuestioner:
         self.word_len = word_len
         self.dictionary = [w for w in dictionary if '-' not in w and len(w)==word_len]
         self.ans_word = random.choice(self.dictionary).upper()
-        print(self.ans_word)
+        #print(self.ans_word)
         self.count = 1
         
     def question(self, word):
@@ -65,7 +65,15 @@ print('------------------------------------------------ ')
 
 H = TonguessQuestioner(dictionary, int(word_len) )
 while True:
-    print('Input the word')
-    w = input('>>>')
-    _ = H.question(w)          
-    if _ : break
+    
+    while True:
+        print('Input the word')
+        w = input('>>>')
+        if len(w)==len(set(w)) and len(w)==H.word_len:
+            break
+        else:
+            print('Maybe wrong, try again')
+            
+    _,feedback = H.question(w)          
+    if _ : 
+        break
